@@ -65,7 +65,7 @@ class Request(models.Model):
 
         # User infomation
         #self.ip = request.META.get('REMOTE_ADDR', '')
-        self.ip = get_real_ip(request) if not None else ''
+        self.ip = get_real_ip(request) if not None else '0.0.0.0'
         
         self.referer = request.META.get('HTTP_REFERER', '')[:255]
         self.user_agent = request.META.get('HTTP_USER_AGENT', '')[:255]
